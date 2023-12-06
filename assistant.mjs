@@ -34,6 +34,7 @@ async function verifyKey(key=localStorage.GPT_API_key){
     console.error('Error occurred while checking API key:', error.message);
   }
 }
+verifyKey()
 
 let assistantList=[]
 
@@ -80,7 +81,7 @@ function UI(div='assistantDiv'){
   if(typeof(div)=='string'){
     div = document.getElementById(div)
   }
-  div.innerHTML=`... working on the UI ...<br>${Date()}`
+  div.innerHTML=`<b style="color:maroon">Working on the UI ...</b><br>${Date()}<br>For a quick peek try <code>a1 = await (await import('https://episphere.github.io/assistant/assistant.mjs')).createAssistant()</code>.`
   return div
 }
 
