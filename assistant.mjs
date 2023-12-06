@@ -49,7 +49,7 @@ async function createAssistant(opt={ // the object parameterizing the new assist
   }) {
   const newAssistant = await openai.beta.assistants.create(opt);
   assistantList.push(newAssistant)
-  console.log('newAssistant', newAssistant);
+  //console.log(`newAssistant (${newAssistant.id})`, newAssistant);
   return newAssistant;
 }
 
@@ -80,7 +80,8 @@ function UI(div='assistantDiv'){
   if(typeof(div)=='string'){
     div = document.getElementById(div)
   }
-  div.innerHTML='... working on the UI ...'
+  div.innerHTML=`... working on the UI ...<br>${Date()}`
+  return div
 }
 
 //main();
